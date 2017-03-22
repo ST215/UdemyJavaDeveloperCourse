@@ -28,8 +28,6 @@ public class Account {
         this("99999", 100.55, customerName, customerEmail, customerPhoneNumber);
     }
 
-
-
     public void deposit(double depositAmount) {
         this.balance += depositAmount;
         System.out.println("Deposit of " + depositAmount + " made. New balance is " + this.balance);
@@ -84,7 +82,6 @@ public class Account {
     public void setCustomerPhoneNumber(String customerPhoneNumber) {
         this.customerPhoneNumber = customerPhoneNumber;
     }
-
 
 }
 
