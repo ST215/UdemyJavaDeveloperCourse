@@ -16,13 +16,19 @@ public class Account {
     }
 
     public Account(String number, double balance, String customerName, String customerEmail, String customerPhoneNumber) {
+        System.out.println("Account Constructor with params called");
         this.number = number;
         this.balance = balance;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
         this.customerPhoneNumber = customerPhoneNumber;
-        System.out.println("Account Constructor with params called");
     }
+
+    public Account(String customerName, String customerEmail, String customerPhoneNumber) {
+        this("99999", 100.55, customerName, customerEmail, customerPhoneNumber);
+    }
+
+
 
     public void deposit(double depositAmount) {
         this.balance += depositAmount;
