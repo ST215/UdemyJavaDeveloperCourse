@@ -6,21 +6,20 @@ public class PC {
     private  Monitor montior;
     private  Motherboard motherboard;
 
-    public PC(Case theCase, Monitor montior, Motherboard motherboard) {
+    public PC(Case theCase, Monitor monitor, Motherboard motherboard) {
         this.theCase = theCase;
-        this.montior = montior;
+        this.montior = monitor;
         this.motherboard = motherboard;
     }
 
-    public Case getTheCase() {
-        return theCase;
+    public void powerUP() {
+        theCase.pressPowerButtion();
+        drawLogo();
     }
 
-    public Monitor getMontior() {
-        return montior;
+    private void drawLogo() {
+        //Fancy Graphics
+        montior.drawPixelAt(1200, 50, "yellow");
     }
 
-    public Motherboard getMotherboard() {
-        return motherboard;
-    }
 }
