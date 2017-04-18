@@ -11,7 +11,7 @@ public class Main {
         }
 
         printArray(myIntergers);
-        printArray(sortIntergers);
+        printArray(sortIntergers(myIntergers));
     }
 
     public static int[] getIntegers(int number) {
@@ -30,6 +30,8 @@ public class Main {
     }
 
     public static int[] sortIntergers(int[] arrayToSort) {
-        
+        Arrays.sort(arrayToSort);
+        return arrayToSort;
+
     }
 }
