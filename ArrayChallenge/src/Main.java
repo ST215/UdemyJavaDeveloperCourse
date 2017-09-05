@@ -5,33 +5,50 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int[] myIntergers = getIntegers(5);
-        for (int i = 0; i < myIntergers.length; i++) {
-            System.out.println("Element " + i + " , typed value was " + myIntergers[i]);
+        int[] myIntegers = getIntegers(5);
+        int[] sorted = sortedIntergers(myIntegers);
+        printArray(sorted);
+    }
+
+    public static int[] getIntegers(int capacity) {
+        int[] array = new int[capacity];
+        System.out.println(" Enter " + capacity + " integer values.\r");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
         }
 
-        printArray(myIntergers);
-        printArray(sortIntergers(myIntergers));
+        return array;
     }
 
-    public static int[] getIntegers(int number) {
-        System.out.println(" Enter " + number + " integer values.\r");
-        int[] values = new int[number];
-
-        for (int i = 0; i < values.length; i++) {
-            values[i] = scanner.nextInt();
+    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Element " + i + " contents " + array[i]);
         }
-
-        return values;
     }
 
-    public static void printArray(int[] scannedInts) {
-        System.out.println(Arrays.toString(scannedInts));
-    }
+    public static int[] sortedIntergers(int[] array) {
+//        int[] sortedArray = new int[array.length];
+//        for (int i = 0; i < array.length; i++) {
+//            sortedArray[i] = array[i];
+//    }
+        int[] sortedArray = Arrays.copyOf(array, array.length);
 
-    public static int[] sortIntergers(int[] arrayToSort) {
-        Arrays.sort(arrayToSort);
-        return arrayToSort;
-
+        boolean flag = true;
+        int temp;
+        while(flag) {
+            flag = false;
+            //element 0     50
+            //element 1     160
+            //element 2     40
+            for (int i = 0; i < sortedArray.length - 1; i++) {
+                if(sortedArray[i] < sortedArray[i + 1]) {
+                    temp = sortedArray[i];
+                    sortedArray[i] = sortedArray[i+1];
+                    sortedArray[i+1] = temp;
+                    flag = true;
+                }
+            }
+        }
+        return sortedArray;
     }
 }
