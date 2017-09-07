@@ -51,4 +51,8 @@ public class GroceryList {
         }
         return false;
     }
+    public static void processArrayList() {
+        ArrayList<String> newArray = new ArrayList<String>();
+        newArray.addAll(groceryList.getGroceryList());
+    }
 }
