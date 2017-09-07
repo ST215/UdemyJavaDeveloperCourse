@@ -10,6 +10,10 @@ public class GroceryList {
         groceryList.add(item);
     }
 
+    public ArrayList<String> getGroceryList() {
+        return groceryList;
+    }
+
     public void printGroceryList() {
         System.out.println("You have " + groceryList.size() + " items in your grocery list");
         for (int i = 0; i < groceryList.size(); i++) {
@@ -50,9 +54,5 @@ public class GroceryList {
             return true;
         }
         return false;
-    }
-    public static void processArrayList() {
-        ArrayList<String> newArray = new ArrayList<String>();
-        newArray.addAll(groceryList.getGroceryList());
     }
 }
